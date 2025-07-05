@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Login from './Login';
 import TaskList from './TaskList';
-import { getUsername, setUsername } from './LocalStorage';
+import { getUsername, setUsername, clearStorage } from './LocalStorage';
 import './App.css';
 
 function App() {
@@ -22,10 +22,16 @@ function App() {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    clearStorage();
+    setUsernameState('');
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-primary-light dark:bg-primary-dark transition-colors duration-500">
       {isLoggedIn ? (
-        <TaskList username={username} />
+        <TaskList username={username} onLogout={handleLogout} />
       ) : (
         <Login onLogin={handleLogin} />
       )}
