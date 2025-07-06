@@ -6,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle';
 import { getTasks, setTasks } from './LocalStorage';
 
 function TaskList({ username, onLogout }) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasksState] = useState([]);
   const [filter, setFilter] = useState('All');
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
@@ -14,32 +14,34 @@ function TaskList({ username, onLogout }) {
 
   useEffect(() => {
     const storedTasks = getTasks();
-    setTasks(storedTasks);
+    setTasksState(storedTasks);
   }, []);
 
-  useEffect(() => {
-    setTasks(tasks);
-  }, [tasks]);
-
   const addTask = (task) => {
-    setTasks([...tasks, task]);
+    const updatedTasks = [...tasks, task];
+    setTasksState(updatedTasks);
+    setTasks(updatedTasks);
     setActiveTab('list');
   };
 
   const toggleComplete = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
     );
+    setTasksState(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const editTask = (id, updatedTask) => {
-    setTasks(tasks.map((task) => (task.id === id ? updatedTask : task)));
+    const updatedTasks = tasks.map((task) => (task.id === id ? updatedTask : task));
+    setTasksState(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasksState(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const filteredTasks = tasks
