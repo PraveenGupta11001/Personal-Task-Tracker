@@ -1,90 +1,140 @@
-Personal Task Tracker
-Overview
-Personal Task Tracker is a modern, user-friendly task management application built with React.js, Vite, and Tailwind CSS. It allows users to log in with a username, manage tasks with details like title, description, priority, due date, and category, and persist their data across sessions using localStorage. The app features a clean, responsive UI with smooth animations, a dark/light mode toggle, and intuitive navigation via tabs for adding and viewing tasks. Each user's tasks are stored separately, ensuring personalized task management.
-Features
+# Personal Task Tracker
 
-User Authentication: Simple login system with username stored in localStorage. User-specific tasks persist even after logout, retrievable upon relogin.
-Task Management:
-Add tasks with title, description, priority (Low, Medium, High), due date, and category.
-Edit tasks inline with real-time updates.
-Delete tasks with confirmation prompts.
-Toggle task completion status.
+## Overview
 
+**Personal Task Tracker** is a modern, user-friendly task management app built with **React.js**, **Vite**, and **Tailwind CSS**. Users can log in with a username, manage tasks (title, description, priority, due date, category), and persist data across sessions using `localStorage`.
 
-Task Filtering & Search:
-Filter tasks by completion status (All, Completed, Pending) and category.
-Search tasks by title or description for quick access.
+It features a responsive UI, dark/light mode toggle, smooth animations, and intuitive tab-based navigation. Each user’s tasks are stored separately to ensure personalized task management.
 
+---
 
-Dark/Light Mode: Toggle between dark and light themes with persistent state via localStorage, respecting system preferences.
-Responsive Design: Optimized for desktop and mobile with Tailwind CSS, featuring smooth animations and hover effects.
-Data Persistence: Tasks and usernames are stored in localStorage, with tasks organized by username for multi-user support.
-Intuitive UI/UX: 
-Welcoming login screen with a polished heading ("Get Started with TaskMaster").
-Tabs to switch between task creation and task list views.
-Clean forms with focus animations and disabled button states for invalid inputs.
+## ✅ Features
 
+### User Authentication
 
+* Simple login system using `localStorage`.
+* User-specific tasks persist across sessions.
 
-Directory Structure
+### Task Management
+
+* Add tasks with title, description, priority (Low/Medium/High), due date, and category.
+* Edit tasks inline.
+* Delete tasks with confirmation.
+* Toggle task completion status.
+
+### Task Filtering & Search
+
+* Filter by status: All / Completed / Pending.
+* Filter by category.
+* Search by task title or description.
+
+### Dark/Light Mode
+
+* Toggle between dark and light themes.
+* Respects system preference and stores choice in `localStorage`.
+
+### Responsive Design
+
+* Optimized for desktop and mobile using Tailwind CSS.
+* Smooth animations and interactive UI.
+
+### Data Persistence
+
+* Tasks and username saved in `localStorage`.
+* Supports multiple users (based on username).
+
+### Intuitive UX
+
+* Welcoming login screen ("Get Started with TaskMaster").
+* Tabs for task creation and viewing.
+* Clean forms, error validation, and disabled states.
+
+---
+
+## 📁 Directory Structure
+
+```
 task-management-app
-.
 ├── eslint.config.js
 ├── index.html
-├── node_modules
-│   ├── ...libs
+├── node_modules/
 ├── package.json
 ├── package-lock.json
 ├── postcss.config.cjs
-├── public
+├── public/
 ├── README.md
-├── src
+├── src/
 │   ├── App.css
 │   ├── App.jsx
-│   ├── assets
-│   ├── components
-│   ├── data
+│   ├── assets/
+│   ├── components/
+│   ├── data/
 │   ├── index.css
 │   ├── main.jsx
-│   └── storage
+│   └── storage/
 ├── tailwind.config.js
 └── vite.config.js
+```
 
-Setup Instructions
+---
 
-Clone the Repository:git clone <repository-url>
+## ⚙️ Setup Instructions
 
+### 1. Clone the Repository
 
-Navigate to the Project Directory:cd task-management-app
+```bash
+git clone <repository-url>
+cd task-management-app
+```
 
+### 2. Install Dependencies
 
-Install Dependencies:npm install
+```bash
+npm install
+```
 
-Alternatively, install specific dependencies:npm install react react-dom react-icons uuid vite @vitejs/plugin-react tailwindcss postcss autoprefixer eslint eslint-plugin-react-hooks eslint-plugin-react-refresh
+Or manually install:
 
+```bash
+npm install react react-dom react-icons uuid vite @vitejs/plugin-react tailwindcss postcss autoprefixer eslint eslint-plugin-react-hooks eslint-plugin-react-refresh
+```
 
-Start the Development Server:npm run dev
+### 3. Start the Development Server
 
+```bash
+npm run dev
+```
 
-Open the Application:Open http://localhost:5173 in your browser.
+Then open `http://localhost:5173` in your browser.
 
-Deployment
-Vercel
+---
 
-Push the repository to GitHub:git add .
+## 🚀 Deployment
+
+### 🔹 Vercel
+
+1. Push code to GitHub:
+
+```bash
+git add .
 git commit -m "Deploy Personal Task Tracker"
 git push origin main
+```
 
+2. Connect the repo to Vercel and deploy via [Vercel Dashboard](https://vercel.com/dashboard).
 
-Connect the repository to Vercel via the Vercel dashboard and deploy.
-Update the Live Demo link in this README with the deployed URL.
+### 🔸 GitHub Pages
 
-GitHub Pages
+1. Install the plugin:
 
-Install vite-plugin-gh-pages:npm install --save-dev vite-plugin-gh-pages
+```bash
+npm install --save-dev vite-plugin-gh-pages
+```
 
+2. Update `vite.config.js`:
 
-Update vite.config.js:import { defineConfig } from 'vite';
+```js
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import ghPages from 'vite-plugin-gh-pages';
 
@@ -92,54 +142,112 @@ export default defineConfig({
   plugins: [react(), ghPages()],
   base: '/task-management-app/',
 });
+```
+
+3. Add deploy script in `package.json`:
+
+```json
+"scripts": {
+  "deploy": "vite build && vite gh-pages"
+}
+```
+
+4. Deploy:
+
+```bash
+npm run deploy
+```
+
+---
+
+## 🛠 Technologies Used
+
+* **React.js** – Component-based UI
+* **Vite** – Lightning-fast dev server & bundler
+* **Tailwind CSS** – Utility-first CSS framework
+* **uuid** – For generating unique task IDs
+* **react-icons** – Icons for edit/delete/theme toggle
+* **ESLint** – Linting and code quality
+* **PostCSS & Autoprefixer** – CSS compatibility
+
+---
+
+## Usage
+
+* **Login**: Enter a username to access or create a task list.
+* **Add Tasks**: Use the "Add Task" tab to add tasks.
+* **View/Edit/Delete**: Use the "Task List" tab to manage tasks.
+* **Filter & Search**: Find tasks easily using filters or keywords.
+* **Theme Toggle**: Use sun/moon icon to toggle theme.
+* **Logout**: Clears session but retains tasks in storage.
+
+---
+
+## Data Persistence
+
+* Tasks are stored in `localStorage` under the user’s name.
+* Example:
+
+```json
+{
+  "user1": [{...}, {...}],
+  "user2": [{...}]
+}
+```
+
+* Handled through a reusable `LocalStorage.js` module with error handling.
+
+---
+
+## 🖼️ Screenshots
+
+![image](https://github.com/user-attachments/assets/0c3ef2af-bede-451c-9ee9-1136dae32d4f)
+
+![image](https://github.com/user-attachments/assets/1a4f0928-35fa-43e0-9130-44c27c95bc31)
+
+![image](https://github.com/user-attachments/assets/0fd3cf2d-0e05-45f0-a662-b3c6ad3a704a)
 
 
-Add a deploy script to package.json:"deploy": "vite build && vite gh-pages"
+---
 
+## 🔗 Live Demo
 
-Deploy:npm run deploy
+👉 [View the Live App](#) *(Update after deployment)*
 
+---
 
-Update the Live Demo link with the GitHub Pages URL.
+## 🤝 Contributing
 
-Technologies Used
+1. Fork the repository.
 
-React.js: Front-end library for building the UI.
-Vite: Fast build tool and development server.
-Tailwind CSS: Utility-first CSS framework for styling.
-uuid: Generates unique IDs for tasks.
-react-icons: Provides icons for edit, delete, and dark/light mode toggle.
-ESLint: Ensures code quality with React-specific linting rules.
-PostCSS & Autoprefixer: Enhances CSS compatibility and processing.
+2. Create a new branch:
 
-Usage
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 
-Login: Enter a username to log in. The username is stored in localStorage, and any existing tasks for that user are loaded.
-Add Tasks: Use the "Add Task" tab to create tasks with title, description, priority, due date, and category.
-View Tasks: Switch to the "Task List" tab to view, edit, delete, or mark tasks as completed.
-Filter & Search: Use the filter dropdowns and search bar to find specific tasks.
-Dark/Light Mode: Toggle between themes using the sun/moon icon.
-Logout: Clears the current session (username and theme) while preserving tasks for future logins.
+3. Commit your changes:
 
-Data Persistence
+   ```bash
+   git commit -m "Add your feature"
+   ```
 
-Tasks are stored in localStorage under the user’s username (e.g., { "user1": [task1, task2], "user2": [task3] }).
-Tasks persist across page refreshes and logouts, retrievable when the same user logs back in.
-The LocalStorage.js module handles all storage operations with error handling for robustness.
+4. Push to GitHub:
 
-Screenshots
-(To be added after deployment)
-Live Demo
-[Link to deployed application]
-Contributing
+   ```bash
+   git push origin feature/your-feature
+   ```
 
-Fork the repository.
-Create a feature branch: git checkout -b feature/your-feature.
-Commit changes: git commit -m "Add your feature".
-Push to the branch: git push origin feature/your-feature.
-Open a pull request.
+5. Open a pull request!
 
-License
-This project is licensed under the MIT License.
-Contact
-For issues or suggestions, please open an issue on the GitHub repository.
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📬 Contact
+
+For issues, suggestions, or improvements, please [open an issue](mailto:praweengupta11001@gmail.com).
