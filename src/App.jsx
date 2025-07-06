@@ -23,7 +23,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    clearStorage();
+    clearStorage(username);
     setUsernameState('');
     setIsLoggedIn(false);
   };

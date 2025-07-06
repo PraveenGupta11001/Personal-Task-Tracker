@@ -13,14 +13,14 @@ function TaskList({ username, onLogout }) {
   const [activeTab, setActiveTab] = useState('form');
 
   useEffect(() => {
-    const storedTasks = getTasks();
+    const storedTasks = getTasks(username);
     setTasksState(storedTasks);
-  }, []);
+  }, [username]);
 
   const addTask = (task) => {
     const updatedTasks = [...tasks, task];
     setTasksState(updatedTasks);
-    setTasks(updatedTasks);
+    setTasks(username, updatedTasks);
     setActiveTab('list');
   };
 
@@ -29,19 +29,19 @@ function TaskList({ username, onLogout }) {
       task.id === id ? { ...task, completed: !task.completed } : task
     );
     setTasksState(updatedTasks);
-    setTasks(updatedTasks);
+    setTasks(username, updatedTasks);
   };
 
   const editTask = (id, updatedTask) => {
     const updatedTasks = tasks.map((task) => (task.id === id ? updatedTask : task));
     setTasksState(updatedTasks);
-    setTasks(updatedTasks);
+    setTasks(username, updatedTasks);
   };
 
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasksState(updatedTasks);
-    setTasks(updatedTasks);
+    setTasks(username, updatedTasks);
   };
 
   const filteredTasks = tasks

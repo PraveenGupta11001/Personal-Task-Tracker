@@ -19,7 +19,9 @@ function Login({ onLogin }) {
   return (
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-md transform transition-all duration-300 hover:shadow-xl">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">Login</h2>
+        <h1 className="text-3xl font-extrabold mb-6 text-center text-gray-900 dark:text-white tracking-tight">
+          TaskMaster
+        </h1>
         <div onKeyDown={handleKeyPress}>
           <div className="mb-6">
             <label className="block text-gray-700 dark:text-gray-200 mb-2 text-sm font-medium" htmlFor="username">
