@@ -67,7 +67,7 @@ function TaskItem({ task, toggleComplete, editTask, deleteTask }) {
           />
           <button
             onClick={handleEdit}
-            className="bg-gradient-primary text-white font-semibold p-3 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md"
+            className="bg-gray-700 text-white font-semibold p-3 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md"
           >
             Save
           </button>
