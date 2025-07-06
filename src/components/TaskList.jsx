@@ -3,7 +3,7 @@ import TaskForm from './TaskForm';
 import TaskItem from './TaskItem';
 import TaskFilter from './TaskFilter';
 import DarkModeToggle from './DarkModeToggle';
-import { getTasks, setTasks } from './LocalStorage';
+import { getTasks, setTasks } from '../storage/LocalStorage';
 
 function TaskList({ username, onLogout }) {
   const [tasks, setTasksState] = useState([]);

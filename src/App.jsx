@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Login from './Login';
-import TaskList from './TaskList';
-import { getUsername, setUsername, clearStorage } from './LocalStorage';
+import Login from './components/Login';
+import TaskList from './components/TaskList';
+import { getUsername, setUsername, clearStorage } from './storage/LocalStorage';
 import './App.css';
 
 function App() {
