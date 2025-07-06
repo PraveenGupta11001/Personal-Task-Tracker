@@ -6,7 +6,15 @@
 
 It features a responsive UI, dark/light mode toggle, smooth animations, and intuitive tab-based navigation. Each user’s tasks are stored separately to ensure personalized task management.
 
+
 ---
+
+## 🔗 Live Demo
+
+👉 [View the Live App](https://personal-task-tracker-sepia.vercel.app/)
+---
+
+
 
 ## ✅ Features
 
@@ -206,13 +214,6 @@ npm run deploy
 ![image](https://github.com/user-attachments/assets/1a4f0928-35fa-43e0-9130-44c27c95bc31)
 
 ![image](https://github.com/user-attachments/assets/0fd3cf2d-0e05-45f0-a662-b3c6ad3a704a)
-
-
----
-
-## 🔗 Live Demo
-
-👉 [View the Live App](#) *(Update after deployment)*
 
 ---
 
